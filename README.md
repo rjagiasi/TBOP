@@ -6,7 +6,7 @@ TRANSITIONAL BILINGUAL OBSERVATION PROTOCOL
 
 ### Sample command to run audio extraction tool:
 
-``` python 1.py -i "path_to_input_video_file.asf" ```
+``` python extractAudio.py -i "sampleVideo.mp4" ```
 
 
 ## Dependencies
