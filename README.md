@@ -14,3 +14,6 @@ TRANSITIONAL BILINGUAL OBSERVATION PROTOCOL
 ```
 pip install moviepy
 ```
+```
+pip install pydub
+```
