@@ -5,6 +5,7 @@ import langid
 def AudioToLang(audio_input):
     r = sr.Recognizer()
     context = sr.AudioFile(audio_input)
+    #context =  audio_input
     with context as source:
         r.adjust_for_ambient_noise(source)
         audio = r.record(source)
@@ -13,7 +14,7 @@ def AudioToLang(audio_input):
     langid.set_languages(['es', 'en'])  # ISO 639-1 codes
     lang, score = langid.classify(translated)
     # print(lang)
-    return lang
+    return lang, score
 
 
 if __name__ == '__main__':
