@@ -2,11 +2,11 @@
 TRANSITIONAL BILINGUAL OBSERVATION PROTOCOL
 
 
-## Audio Extraction
+## Pipeline
 
 ### Sample command to run audio extraction tool:
 
-``` python extractAudio.py -i "sampleVideo.mp4" ```
+``` python main.py -i "input_file_path.asf" ```
 
 
 ## Dependencies
@@ -27,3 +27,4 @@ pip install moviepy
 ```
 pip install pydub
 ```
+
