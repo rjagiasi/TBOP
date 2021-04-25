@@ -7,16 +7,17 @@ import argparse
 def model(input_file):
     
     #input_file = "/Users/zaidbhat/Desktop/TAMU-Courses/SE_project/Data/S2/Videos/1.asf"
-    extract_audio(input_file)
-    chunk_len = AudioSplit("Data/Processed/output.wav")
-    chunk_len = 162
+    #extract_audio(input_file)
+    #chunk_len = AudioSplit("Data/Processed/output.wav")
+    chunk_len = 16
     start = 0.00
     output = []
     for i in range(chunk_len):
         chunk_path = "Data/Processed/chunk{}.wav".format(i)
         try:
-            lang, score = AudioToLang(chunk_path)
+            lang = AudioToLang(chunk_path)
         except Exception as e:
+            lang = 5
             print("Empty chunk :", i, e )
 
         timestamp = str(round(start,2))+"-"+str(round(start+0.20,2))

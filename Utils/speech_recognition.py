@@ -10,13 +10,20 @@ def AudioToLang(audio_input):
         #r.adjust_for_ambient_noise(source)
         audio = r.record(source)
     translated = r.recognize_google(audio)
-    print(translated)
+    #print(translated)
     # print(somevar)
     #langid.set_languages(['es', 'en'])  # ISO 639-1 codes
     #lang, score = langid.classify(translated)
-    lang = detect_langs(translated)
-    print(lang)
-    return lang, lang
+    lang = detect(translated)
+    #print(lang)
+    if lang =='en':
+        lang = 2
+    elif lang =='es':
+        lang = 1
+    else:
+        lang = 5
+    #print(lang)
+    return lang
 
 
 if __name__ == '__main__':
