@@ -8,8 +8,8 @@ def model(input_file):
     
     #input_file = "/Users/zaidbhat/Desktop/TAMU-Courses/SE_project/Data/S2/Videos/1.asf"
     extract_audio(input_file)
-    chunk_len = AudioSplit("Data/Processed/trial.wav")
-
+    chunk_len = AudioSplit("Data/Processed/output.wav")
+    chunk_len = 162
     start = 0.00
     output = []
     for i in range(chunk_len):
@@ -22,8 +22,9 @@ def model(input_file):
         timestamp = str(round(start,2))+"-"+str(round(start+0.20,2))
         
         start += 0.20
+        
         arr = [input_file, timestamp, lang]
-        print(arr)
+        #print(arr)
         output.append(arr)
         head = ["File Name","TimeStamp","Language"]
         

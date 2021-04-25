@@ -14,7 +14,7 @@ def extract_audio(video_path,\
     #audio_path = audio_path.rsplit( ".", 1 )[ 0 ] +'.wav'
     
     clip = mp.VideoFileClip(video_path)
-    clip.audio.write_audiofile(audio_path + "trial.wav")
+    clip.audio.write_audiofile(audio_path + "output.wav")
 """
 def main():
 
