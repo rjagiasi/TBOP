@@ -3,15 +3,14 @@ from Utils.SplitAudio import AudioSplit
 from Utils.speech_recognition import AudioToLang
 import csv
 import argparse
-import datetime 
 from datetime import time,timedelta
 
 def model(input_file):
     
-    extract_audio(input_file)
-    chunk_len = AudioSplit("Data/Processed/output.wav")
-    #chunk_len = 16
-    start = timedelta(hours = 0, minutes = 0, seconds = 0)
+    #extract_audio(input_file)
+    #chunk_len = AudioSplit("Data/Processed/output.wav")
+    chunk_len = 16
+    start_time = timedelta(hours = 0, minutes = 0, seconds = 0)
     output = []
     for i in range(chunk_len):
         chunk_path = "Data/Processed/chunk{}.wav".format(i)
@@ -22,9 +21,9 @@ def model(input_file):
             print("Empty chunk :", i, e )
         
         deltatime = timedelta(seconds = 20)
-        end = start + deltatime
-        timestamp = str(start) + "-" + str(end)
-        start = start + deltatime
+        end_time = start_time + deltatime
+        timestamp = str(start_time) + "-" + str(end_time)
+        start_time = start_time + deltatime
         arr = [input_file, timestamp, lang]
         output.append(arr)
         head = ["File Name","TimeStamp","Language"]
