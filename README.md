@@ -30,3 +30,7 @@ python main.py -i path_of_the_video_file_to_be_tested
 ## Architecture Diagram
 
 ![Alt text](tbop_architecture.png?raw=true "Title")
+
+## Pivotal tracker for the project
+Pivotal tracker account: https://www.pivotaltracker.com/n/projects/2495399
+
