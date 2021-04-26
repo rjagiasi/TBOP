@@ -3,13 +3,13 @@ from Utils.SplitAudio import AudioSplit
 from Utils.speech_recognition import AudioToLang
 import csv
 import argparse
-from datetime import time,timedelta
+from datetime import timedelta
 
 def model(input_file):
     
-    #extract_audio(input_file)
-    #chunk_len = AudioSplit("Data/Processed/output.wav")
-    chunk_len = 16
+    extract_audio(input_file)
+    chunk_len = AudioSplit("Data/Processed/output.wav")
+    #chunk_len = 16
     start_time = timedelta(hours = 0, minutes = 0, seconds = 0)
     output = []
     for i in range(chunk_len):
