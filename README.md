@@ -26,3 +26,7 @@ python main.py -i "sample_video.asf"
 python main.py -i path_of_the_video_file_to_be_tested
 ```
 -i stands for input. It takes as argument the path of the video file to be tested.
+
+## Architecture Diagram
+
+![Alt text](tbop_architecture.png?raw=true "Title")
