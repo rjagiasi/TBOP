@@ -3,14 +3,15 @@ from Utils.SplitAudio import AudioSplit
 from Utils.speech_recognition import AudioToLang
 import csv
 import argparse
+import datetime 
+from datetime import time,timedelta
 
 def model(input_file):
     
-    #input_file = "/Users/zaidbhat/Desktop/TAMU-Courses/SE_project/Data/S2/Videos/1.asf"
-    #extract_audio(input_file)
-    #chunk_len = AudioSplit("Data/Processed/output.wav")
-    chunk_len = 16
-    start = 0.00
+    extract_audio(input_file)
+    chunk_len = AudioSplit("Data/Processed/output.wav")
+    #chunk_len = 16
+    start = timedelta(minutes = 0, seconds = 0)
     output = []
     for i in range(chunk_len):
         chunk_path = "Data/Processed/chunk{}.wav".format(i)
@@ -19,13 +20,12 @@ def model(input_file):
         except Exception as e:
             lang = 5
             print("Empty chunk :", i, e )
-
-        timestamp = str(round(start,2))+"-"+str(round(start+0.20,2))
         
-        start += 0.20
-        
+        deltatime = timedelta(seconds = 20)
+        end = start + deltatime
+        timestamp = str(start) + "-" + str(end)
+        start = start + deltatime
         arr = [input_file, timestamp, lang]
-        #print(arr)
         output.append(arr)
         head = ["File Name","TimeStamp","Language"]
         
