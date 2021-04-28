@@ -2,12 +2,12 @@ from openpyxl import load_workbook
 import csv
 
 #wb_obj = load_workbook('10812_R3_With_time.xlsx')
-wb_obj = load_workbook('Data/Evaluation/Eval_data/10112_R2_With_time.xlsx')
+wb_obj = load_workbook('Data/Evaluation/Eval_data/10812_R3_With_time.xlsx')
 sheet_obj = wb_obj.active
 max_col = sheet_obj.max_column
 
-#m_row = sheet_obj.max_row
-m_row = 32
+m_row = sheet_obj.max_row
+# m_row = 14
 excel_data_arr = []
 
 for i in range(2, m_row + 1):
@@ -18,7 +18,7 @@ for i in range(2, m_row + 1):
 
 actual_data_arr = []
 
-with open('Data/Output/output.csv') as csv_file:
+with open('Data/Output/output_10812_R3.csv') as csv_file:
     csv_reader = csv.reader(csv_file)
     next(csv_reader)
     for row in csv_reader:
@@ -36,20 +36,30 @@ print("actual_data_arr",actual_data_arr)
 print("excel_data_arr",excel_data_arr)
 
 arr_size = len(actual_data_arr)
+total = len(excel_data_arr)
 count = 0
 correct = 0
 
-for i in range(1,arr_size):
+for i in range(0,arr_size):
+    # print(i,actual_data_arr[i][0])
+    if (int(int(actual_data_arr[i][0].split(':')[1])/5))%2 == 1:
+            print(i,actual_data_arr[i][0])
+            continue 
+    # for j in range(0,len(excel_data_arr)):
+
     # print(int(int(actual_data_arr[i][0].split(':')[1])/5)%2)
-    if (int(int(actual_data_arr[i][1].split(':')[1])/5))%2 == 1:
-        print(i)
-        continue 
-    if(actual_data_arr[i][1] == excel_data_arr[i]):
-        count+=1
+        
+    if(actual_data_arr[i][1] == excel_data_arr[count]):
+        count +=1
         correct += 1
     else:
         count +=1
-
-percentage_accuracy = (correct/count)*100
+    
+    if count==(total):
+        break
+    
+print(correct)
+print(count)
+percentage_accuracy = (correct/total)*100
 
 print("accuracy of the code is :", percentage_accuracy)

@@ -14,6 +14,8 @@ pip install langdetect
 pip install moviepy
 
 pip install pydub
+
+pip install openpyxl
 ```
 
 ## Pipeline
