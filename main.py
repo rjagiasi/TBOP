@@ -17,7 +17,7 @@ def model(input_file):
         try:
             lang = AudioToLang(chunk_path)
         except Exception as e:
-            lang = 5
+            lang = 6
             print("Empty chunk :", i, e )
         
         deltatime = timedelta(seconds = 20)
