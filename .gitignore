@@ -5,3 +5,13 @@ Data/Evaluation/Eval_data/~$10112_R2_With_time.xlsx
 Data/Evaluation/Eval_data/10112_R2_With_time.xlsx
 Data/Evaluation/Eval_data/10112_R2_With_time.xlsx - Sheet1.csv
 .DS_Store
+*png
+*asf
+*xlsx
+*csv
+*.csv
+Data/Output/output_10112_R2.csv
+Data/Output/output_40631_R1.csv
+Data/Output/output_80222_R2.csv
+Data/Output/output_91132_R3.csv
+Data/Output/output_10812_R3.csv
