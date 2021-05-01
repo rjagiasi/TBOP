@@ -45,7 +45,7 @@ count = 0
 correct = 0
 spanish, english =0, 0
 t_english = 0
-
+ac_eng = 0
 for i in range(0,arr_size):
     
 
@@ -65,6 +65,8 @@ for i in range(0,arr_size):
         excel_data_arr[count] = 1
     if excel_data_arr[count] ==4:
         excel_data_arr[count] = 2
+    if excel_data_arr[count] ==2:
+        ac_eng+=1
     #print('Excel',excel_data_arr[count],actual_data_arr[i][1])
     print('Excel',excel_data_arr[count],actual_data_arr[i][1])
     if excel_data_arr[count]==2:
@@ -100,7 +102,9 @@ for i in range(0,arr_size):
 print(correct)
 print(count,total, i)
 print(spanish, english)
-print("english accuracy:", english/t_english)
+print("english accuracy:", 100*english/t_english )
+print("Percentage english predicted:", 100*english/total)
+print("Actual english:",100*ac_eng/total )
 percentage_accuracy = (correct/total)*100
 
 print("accuracy of the code is :", percentage_accuracy)
