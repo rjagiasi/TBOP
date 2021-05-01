@@ -8,6 +8,13 @@ import os
 #/Users/zaidbhat/Desktop/TAMU-Courses/SE_project/Data/S2/Videos/1.asf, Data/Input/sampleVideo.mp4
 def extract_audio(video_path,\
                     audio_path = "Data/Processed/"):
+    path = os.getcwd() + '/Data/'
+    path_processed = path + 'Processed'
+    dirs = os.listdir( path )
+    if 'Processed' not in dirs:
+        os.mkdir(path_processed)
+
+
     
     
     
